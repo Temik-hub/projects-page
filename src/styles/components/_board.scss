@@ -1,0 +1,31 @@
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: linear-gradient(#121518, #747b81);
+  overflow: hidden;
+}
+
+.board__container {
+  max-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 8px;
+}
+
+.square {
+  width: 32px;
+  height: 32px;
+  background-color: #1d1d1d;
+  box-shadow: 0 0 2px #000;
+  transition: 2s ease;
+  &:hover {
+    transition-duration: 0s;
+  }
+}

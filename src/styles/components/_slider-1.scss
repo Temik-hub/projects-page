@@ -1,0 +1,28 @@
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(#747b81, #121518);
+}
+.slider__container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 0 20px;
+}
+.slider__item {
+  position: relative;
+  flex: 1;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  &--active {
+    flex: 10;
+  }
+}
