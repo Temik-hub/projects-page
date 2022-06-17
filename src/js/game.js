@@ -64,7 +64,7 @@ function setTime(value) {
 
 function finishGame() {
   timeEl.parentNode.classList.add('hide')
-  board.innerHTML = `<h1>Счет: <span class="primary">${score}</span></h1><a href="#" class="game__start" id="restart">Начать заново</a>`
+  board.innerHTML = `<h2>Счет: <span class="primary">${score}</span></h2><a href="#" class="game__start" id="restart">Начать заново</a>`
 
   const restartBtn = document.querySelector('#restart')
   restartBtn.addEventListener('click', (event) => {
@@ -108,5 +108,6 @@ function sizeCircleIncrement() {
   circle.style.height = `${sizeBallMax + sizeBallInc}px`
   if (sizeBallMax + sizeBallInc === 0) {
     finishGame()
+    score = 0
   }
 }
