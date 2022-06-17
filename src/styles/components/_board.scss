@@ -3,14 +3,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   margin: 0;
   background: linear-gradient(#333333, #202020);
   overflow: hidden;
 }
 .board__container {
-  height: 80vh;
+  height: 60vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
