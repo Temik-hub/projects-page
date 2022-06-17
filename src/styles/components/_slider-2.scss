@@ -1,10 +1,21 @@
+.slider-second {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#202020, #002e57);
+  padding: 20px 20px;
+  & .title {
+    padding: 20px 30px 20px 10px;
+  }
+}
 .slider-second__container {
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 90vh;
+  border-radius: 20px;
 }
-
 .slider-second__sidebar {
   height: 100%;
   width: 35%;
@@ -12,94 +23,68 @@
   top: 0;
   left: 0;
   transition: transform 0.5s ease-in-out;
-  & div {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+}
+.slider-second__sidebar-item {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  &:first-child {
+    background: linear-gradient(#01bdc9, #e70201, #01bdc9);
   }
-  & h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-    margin-top: -30px;
+  &:nth-child(2) {
+    background: linear-gradient(#ff78ff -20%, #051218 50%, #ff78ff 130%)
+  }
+  &:nth-child(3) {
+    background: linear-gradient(#636363,#e9f6ef,#636363,)
+  }
+  &:last-child {
+    background: linear-gradient(#01102f, #0049da, #01102f)
   }
 }
-
-// .slider-second__sidebar > div {
-//   height: 100%;
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   color: #fff;
-// }
-
-// .slider-second__sidebar h1 {
-//   font-size: 40px;
-//   margin-bottom: 10px;
-//   margin-top: -30px;
-// }
-
-.slider-second__main-slide{
+.slider-second__main {
   height: 100%;
   position: absolute;
   top: 0;
   left: 35%;
   width: 65%;
   transition: transform 0.5s ease-in-out;
-  & div {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 100%;
-    width: 100%;
-  }
 }
-
-// .slider-second__main-slide > div {
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: center center;
-//   height: 100%;
-//   width: 100%;
-// }
-
-button {
+.slider-second__main-item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+}
+.slider-second__button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 20;
   background-color: #fff;
   border: none;
   color: #aaa;
   cursor: pointer;
   font-size: 16px;
   padding: 15px;
-}
-
-button:hover {
-  color: #222;
-}
-
-button:focus {
-  outline: none;
-}
-
-.slider-second__container .slider-second__controls button {
-  position: absolute;
-  left: 35%;
-  top: 50%;
-  z-index: 100;
-}
-
-.slider-second__down-button {
-  transform: translateX(-100%);
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.slider-second__up-button {
-  transform: translateY(-100%);
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  &:hover {
+    color: #222;
+  }
+  &:focus {
+    outline: none;
+  }
+  &--down {
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  &--up {
+    transform: translateY(-100%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 }

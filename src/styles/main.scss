@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-@import 'vars';
-@import 'fonts';
 @import 'scaffolding';
 
+@import './components/header';
 @import './components/slider-1';
 @import './components/board';
 @import './components/slider-2';
+@import './components/game';

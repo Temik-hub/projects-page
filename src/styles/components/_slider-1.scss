@@ -1,28 +1,143 @@
 .slider {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100%;
-  background: linear-gradient(#747b81, #121518);
+  height: 110vh;
+  padding-top: 100px;
+  background: linear-gradient(#161616, #333333);
 }
 .slider__container {
+  position: relative;
   display: flex;
+  overflow: hidden;
   gap: 20px;
-  width: 100%;
-  padding: 0 20px;
+  width: 100vw;
+  padding: 20px;
+  @media (max-width: 1024px) {
+    gap: 0;
+  }
+}
+.slider__btn-left {
+  display: none;
+  position: absolute;
+  top: calc(50% - 30px);
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url('/src/images/icons/angle-left.svg'),
+  rgba(148, 148, 148, 0.6);
+  z-index: 1;
+  cursor: pointer;
+  @media (max-width: 1024px) {
+    display: block;
+  }
+}
+.slider__btn-right {
+  display: none;
+  position: absolute;
+  top: calc(50% - 30px);
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url('/src/images/icons/angle-right.svg'),
+  rgba(148, 148, 148, 0.6);
+  z-index: 1;
+  cursor: pointer;
+  @media (max-width: 1024px) {
+    display: block;
+  }
 }
 .slider__item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   flex: 1;
   height: 80vh;
-  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.6s ease;
+  opacity: 0.4;
+  overflow: hidden;
   &--active {
     flex: 10;
+    opacity: 1;
+    & .slider__description {
+      opacity: 1;
+      transition: opacity 0.3s ease-in 0.5s;
+    }
+    & .slider__link {
+      visibility: visible;
+    }
+  } 
+  &:first-child {
+    background-image: url('/src/images/marvel.png');
   }
+  &:nth-child(2) {
+    background-image: url('/src/images/caped-site.png');
+  }
+  &:nth-child(3) {
+    background-image: url('/src/images/frispes-site.png');
+  }
+  &:nth-child(4) {
+    background-image: url('/src/images/vue-project.png');
+  }
+  &:nth-child(5) {
+    background-image: url('/src/images/CentralMusic.png');
+  }
+  &:nth-child(6) {
+    background-image: url('/src/images/portfolio-site.png');
+  }
+  
+  @media (max-width: 1024px) {
+    &--active {
+      flex: 1;
+      padding-bottom: 30px;
+      &:nth-child(4) {
+        background-position: -90px 0;
+      }
+    } 
+    &:not(.slider__item--active){
+        display: none;
+    }
+  } 
+}
+.slider__description {
+  position: absolute;
+  margin: 20px;
+  padding: 0 20px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(54, 54, 54, 0.8);
+  border-radius: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  @media (max-width: 768px) {
+    max-width: 240px;
+    font-size: 12px;
+  }
+}
+.slider__title {
+  margin: 0;
+  padding: 10px;
+  color: rgb(255, 225, 58);
+}
+.slider__text {
+  padding: 0 10px;
+  padding-bottom: 10px;
+}
+.slider__link {
+  visibility: hidden;
+  color: rgb(0, 174, 218);
+  padding: 14px 10px;
 }

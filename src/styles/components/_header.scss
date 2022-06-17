@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  background: rgba($color: #000000, $alpha: 0.6);
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  @media (max-width: 1024px) {
+    padding: 20px 20px;
+    flex-direction: row-reverse;
+  }
+}
+.header__list {
+  display: flex;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  &--active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding-top: 150px;
+    height: 120vh;
+    width: 100vw;
+    flex-direction: column;
+    background: rgba($color: #1f1f1f, $alpha: 0.9);
+    z-index: 5;
+  }
+}
+.header__item {
+  margin-right: 20px;
+}
+.header__link {
+  position: relative;
+  display: block;
+  padding: 8px 12px;
+  font-size: 18px;
+  color: rgb(194, 194, 194);
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(235, 235, 235);
+  }
+  &:hover {
+    color: #fff;
+  }
+  &:hover::before {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+  }
+}
+.header__text-wrapper {
+  position: absolute;
+  right: 30px;
+}
+.header__text {
+  color: #2af8ff;
+  font-size: 35px;
+}
+
+.header__text__typing {
+  font-size: 35px;
+  font-weight: 600;
+  color: #fff;
+}
+.header__burger {
+  visibility: hidden;
+  position: relative;
+  width: 35px;
+  height: 25px;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  &--active {
+    z-index: 5;
+    .header__burger-line {
+      transform: rotateZ(-45deg);
+      transition: transform 0.2s ease;
+    }
+    & ::before {
+      transform: rotateZ(90deg);
+      transition: transform 0.2s ease;
+    }
+  }
+  @media (max-width: 1024px) {
+    visibility: visible;
+    margin-right: auto;
+  }
+}
+.header__burger-line {
+  display: block;
+  top: calc(50% - 2px);
+  left: 0;
+  width: 35px;
+  height: 3px;
+  background-color: rgb(235, 235, 235);
+  transition: all 0.2s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background-color: inherit;
+    transition: all 0.2s ease;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background-color: inherit;
+  }
+}

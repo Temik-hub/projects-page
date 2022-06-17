@@ -1,13 +1,13 @@
-const upBtn = document.querySelector('.slider-second__up-button')
-const downBtn = document.querySelector('.slider-second__down-button')
+const upBtn = document.querySelector('.slider-second__button--up')
+const downBtn = document.querySelector('.slider-second__button--down')
 const sidebar = document.querySelector('.slider-second__sidebar')
-const mainSlide  = document.querySelector('.slider-second__main-slide')
+const mainSlide  = document.querySelector('.slider-second__main')
 const slidesCount = mainSlide.querySelectorAll('div').length
 const container = document.querySelector('.slider-second__container')
 
 let activeSlideIndex = 0
 
-sidebar.style.top = `-${(slidesCount - 1) * 100}vh`
+sidebar.style.top = `-${(slidesCount - 1) * 90}vh`
 
 upBtn.addEventListener('click', () => {
   changeSlide('up')
