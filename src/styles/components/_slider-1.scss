@@ -105,6 +105,10 @@
     &:not(.slider__item--active){
         display: none;
     }
+  }
+  @media (max-height: 550px) {
+    justify-content: flex-start;
+    height: 56vh;
   } 
 }
 .slider__description {
@@ -125,11 +129,23 @@
   @media (max-width: 768px) {
     max-width: 240px;
     font-size: 12px;
+    & .slider__title {
+      font-size: 20px;
+      padding-bottom: 5px;
+    }
+    & .slider__text {
+      padding-bottom: 5px;
+    }
+    & .slider__link {
+      padding-top: 5px;
+    }
   }
+  
 }
 .slider__title {
   margin: 0;
   padding: 10px;
+  font-size: 32px;
   color: rgb(255, 225, 58);
 }
 .slider__text {

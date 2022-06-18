@@ -109,6 +109,5 @@ function sizeCircleIncrement() {
   circle.style.height = `${sizeBallMax + sizeBallInc}px`
   if (sizeBallMax + sizeBallInc === 0) {
     finishGame()
-    score = 0
   }
 }
