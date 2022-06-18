@@ -44,6 +44,7 @@ function startGame() {
   sizeBallInc = 0
   setTimeout('', 5000)
   timerSizeId = setInterval(sizeCircleIncrement, 100)
+  score = 0
 }
 
 function decreaseTime() {
